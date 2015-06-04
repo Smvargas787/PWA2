@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>":animated" demo</title>
+  <style>
+   div {
+      background: yellow;
+      border: 1px solid #AAA;
+      width: 80px;
+      height: 80px;
+      margin: 0 5px;
+      float: left;
+    }
+    div.colored {
+      background: green;
+    }
+  </style>
+</head>
+
+<body>
+<h1>$( ":animated" )</h1>
+<!----Instructions-->
+<!--Using the animate selector filter, change the animated div to have a background color of red.  Note: Use the CSS method.  -->
+
+<button id="run">Run</button><br>
+<div style="background:blue;">Div 1</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+
+    function aniDiv(){
+        $("div:eq(0)").animate({width:"50%"},"slow");
+        $("div:eq(0)").animate({width:"100%"},"slow",aniDiv);
+    }
+    aniDiv();
+
+    $("#run").click(function(){
+        $(":animated").css("background-color","red");
+    });
+    //    $('div').anim("background-color","red")
+</script>
+
+
+</body>
+</html>
