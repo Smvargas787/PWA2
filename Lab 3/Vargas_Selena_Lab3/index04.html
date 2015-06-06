@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<link href ="css/style.css" rel ="stylesheet"/>
+
+<h1>Offset</h1>
+
+<p>Howdy!</p><p></p>
+
+<h2>Data</h2>
+
+<div>
+    The values stored were
+    <span></span>
+    and
+    <span></span>
+</div>
+
+<p>Results: </p>
+
+<script>
+
+    var p = $( "p:first" );
+    $( "p:last" ).text( "scrollLeft:" + p.scrollLeft() ); //.scrollLeft()
+
+    var div = $( "div" )[ 0 ];
+    jQuery.data( div, "test", {
+        first: 16,
+        last: "pizza!"
+    });
+    $( "span:first" ).text( jQuery.data( div, "test" ).first );
+    $( "span:last" ).text( jQuery.data( div, "test" ).last ); //jQuery.data()
+
+    var $p = jQuery( "p" ), p = $p[ 0 ];
+    $p.append( jQuery.hasData( p ) + " " ); // false
+
+    $.data( p, "testing", 123 );
+    $p.append( jQuery.hasData( p ) + " " ); // true
+
+    $.removeData( p, "testing" );
+    $p.append( jQuery.hasData( p ) + " " ); // false
+
+    $p.on( "click", function() {} );
+    $p.append( jQuery.hasData( p ) + " " ); // true
+
+    $p.off( "click" );
+    $p.append( jQuery.hasData( p ) + " " ); // false //jQuery.hasData()
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<link href ="css/style.css" rel ="stylesheet"/>
+
+<h1>DOM Insertion, Inside</h1>
+
+<p>
+    <b>Don't stop clicking Me!</b> <span id="tag">html</span>
+</p>
+<p>
+    to a <span id="text">text</span> node.
+</p>
+<p>
+    This <button name="nada">button</button> doesn't like you.
+</p>
+
+<p><b>I'm a weird little </b> Paragraph.</p>
+<p></p>
+
+<h1>DOM Insertion, Outside</h1>
+
+<p>Computadora says..</p>
+
+
+<script>
+    $( "p" ).click(function() {
+        var htmlString = $( this ).html();
+        $( this ).text( htmlString ); //.html()
+    });
+
+    var str = $( "p:first" ).text();
+    $( "p:last" ).html( str ); //.text()
+
+    $( "p" ).after( "<b>Hello</b>" );
+
+</script>
+
+</body>
+</html>
