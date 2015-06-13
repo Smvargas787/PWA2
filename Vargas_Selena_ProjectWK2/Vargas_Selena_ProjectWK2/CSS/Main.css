@@ -1,0 +1,159 @@
+/*-----------------------Body-------------------------*/
+
+body{
+    background-color: #d3d3d3;
+    background-image: url("../images/stewardmanagement1080.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+
+/*Headings*/
+h1 {
+    font-family: "Dosis";
+    font-size: 45px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.joinnow{
+    font-size: 18px;
+    position: relative;
+    top: -10px;
+}
+
+/*-------------------------Tabs-------------------------*/
+
+#tabs {
+    background-color: #999;
+    width: 600px;
+    height: 150px;
+    padding: 20px;
+}
+
+#tabs-nav{
+    width: 600px;
+    height: 75px;
+    padding: 20px;
+    background-color: #999;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+#tabs-nav li {
+    display: inline;
+}
+
+/*--------------------------------Modal-------------------------------------*/
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0 , 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+#modal{
+    Width: 350px;
+    background: #CCC;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    z-index: 1001;
+    display: none;
+}
+
+#modal .header{
+    background: #333;
+    color: #FFF;
+    padding: 10px;
+}
+
+#modal p{
+    margin: 15px;
+}
+
+#modal .close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #F00;
+}
+
+
+
+/*---Tooltip---*/
+
+
+.tooltip {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px ;
+}
+
+/*------Navigation-----*/
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline;
+    position: relative;
+}
+
+ul ul {
+    position: absolute;
+    display: none;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none
+;
+}
+
+a:hover{
+    color: #d3d3d3;
+    border-bottom: solid #fff 1px;
+    padding-bottom: 1px;
+}
+
+li:hover ul a {
+    display: block;
+}
+
+ul ul ul {
+    left: 100%;
+    top: 0;
+}
+
+li:hover > ul {
+    display: block;
+}
+
