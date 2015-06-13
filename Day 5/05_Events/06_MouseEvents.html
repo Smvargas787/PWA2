@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mouse Events - .$(selector).hover(inFunction,outFunction)</title>
+</head>
+
+<body>
+  <p>Syntax<br>
+    $(selector).hover(inFunction,outFunction)
+  </p>
+
+<!----Instructions-->
+<!--Using the hover method, apply a background color(you pick) to the <input> element when user hovers over it.-->
+
+<div>
+First name: <input type="text"><br>
+Last name: <input type="text">
+</div>
+
+
+<script>
+$('input').hover(function(){
+	$(this).css('background-color', 'yellow');
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href ="css/style.css" rel ="stylesheet"/>
+</head>
+<body>
+
+<p>Hi ya!</p>
+<a href="#">I'm scared!</a>
+<p>You big baby.</p>
+
+
+<button>Show The Rest...</button>
+<p style="display: none">Run Away!</p>
+
+<button id="left">&laquo;</button>
+<button id="right">&raquo;</button>
+<div class="block"></div>
+
+
+<script>
+
+//Effects
+
+    //==============================Basics
+
+    //.hide()
+    $( "p" ).hide();
+    $( "a" ).click(function( event ) {
+        event.preventDefault();
+        $( this ).hide();
+    });
+
+
+    //.show()
+    $( "button" ).click(function() {
+        $( "p" ).show( "slow" );
+    });
+
+    //==============================Custom
+
+    //.animate()
+    $( "#right" ).click(function() {
+        $( ".block" ).animate({ "left": "+=50px" }, "slow" );
+    });
+
+    $( "#left" ).click(function(){
+        $( ".block" ).animate({ "left": "-=50px" }, "slow" );
+    });
+
+
+</script>
+</body>
+</html>

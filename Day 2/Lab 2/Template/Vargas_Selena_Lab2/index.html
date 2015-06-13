@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+<h1>Who Am I?</h1>
+
+
+<div class="name">My name is Selena Vargas</div>
+
+<ul class="facts">
+    <li>Facts About Me:
+        <ul>
+            <li>I'm Puerto Rican</li>
+            <li>I'm Blessed</li>
+            <li>I never give up</li>
+        </ul>
+    </li>
+</ul>
+
+<form>
+    <div>Do You Like Me?</div>
+
+    <label for="name">Yes or Yes?</label>
+    <input name="name" id="name">
+</form>
+
+<h3>Favorite Spanish Words</h3>
+<div lang="es-es">Comida
+    <div>Bano
+        <div>Ayuda Me</div>
+    </div>
+</div>
+
+<div><p>Siblings</p></div>
+<div>Missy</div>
+<div>Bobby</div>
+
+<div class="starthidden">Hide Me!</div>
+<div></div>
+
+<form>
+    <input type="hidden">
+    <input type="hidden">
+    <input type="hidden">
+</form>
+
+<button>Click here!</button>
+<div></div>
+<div class="starthidden"></div>
+<div></div>
+<div></div>
+<div style="display:none;"></div>
+
+<input type="radio" name="accept" value="Evil Plans">
+<span>Want to know more?</span>
+</div>
+
+<input name="newsletter">
+
+<div>
+    <span>This is the part where you laugh.</span>
+</div>
+
+<form>
+    <input name="email" disabled="disabled">
+    <input name="id">
+</form>
+
+<form>
+    <input name="email" disabled="disabled">
+    <input name="id">
+</form>
+
+<div>
+    <button>Sibling!</button>
+</div>
+
+<script>
+    $( ".name" ).css( "background-color", "white" ); //Class
+    $('div').css("border", "9px groove red");//Element
+    $( "ul.facts > li" ).css( "font-family", "cursive" ); //Parent>Child
+    $( "form input" ).css( "border", "2px solid black" ); //Ancestor Descendant
+    $( ":header" ).css({ color: "blue" }); //:Header
+    $( ":lang(es-es)" ).addClass( "spain" );  //:lang()
+    $( "div:has(p)" ).addClass( "test" ); //:has()
+    $( "div:contains('Missy')" ).css( "text-decoration", "underline" ); //:contains()
+    $( "div:contains('Bobby')" ).css( "text-decoration", "underline" );//:contains()
+    $( "div:hidden" ).show( 3000 ); //:hidden
+    $( ":visible" ).click(function() {
+        $( this ).css( "background", "yellow" ); //:visible
+    });
+    $( "input[name!='newsletter']" ).next().append( ); //[name!=”value”]
+    $( "input[name$='letter']" ).val( "You have no choice" ); //[name$=”value”]
+    $( "span:first-of-type" ).addClass( "fot" ); //:first-of-type
+    $( "input:disabled" ).val( "Disabled button agrees" ); //:disabled
+    $( "input:enabled" ).val( "Enabled button agrees" ); //:enabled
+    $( "div button:only-child" ).text( "GoodBye!" ).css( "border", "2px blue solid" ); //:only-child
+</script>
+
+</body>
+</html>

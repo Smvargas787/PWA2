@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Form Events - .change( handler )</title>
+<style>
+ div {
+color: red;
+}
+
+</style>
+</head>
+
+<body>
+<!----Instructions-->
+<!--Targeting the class of color, when the user clicks out of the input box, change the background color of the input box to a color of your choice. Use the .change method and .css method -->
+
+<p>Syntax<br>
+$(selector).change() <br>
+or<br>
+$(selector).change(function)
+</p>
+
+
+
+<input type="text" class="color">
+<p>Write something in the input field, and then press enter or click outside the field.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $('.color').change('click',function(){
+        $(this).css('background','green');
+    });
+</script>
+
+
+</body>
+</html>

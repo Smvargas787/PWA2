@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Keybord Events - .keypress( handler )</title>
+</head>
+
+<body>
+
+<p>Syntax<br>
+$(selector).keypress() 
+<br>or<br>
+$(selector).keypress(function)
+</p>
+
+
+<!----Instructions-->
+<!--Use the key up method to alert the user that the key has been pressed after they type in the input box.-->
+
+<p>Enter your name: <input type="text"></p>
+
+
+<script>
+$('input').keyup(function(){ 
+	alert('key Up NOW!');
+});
+
+</script>
+
+
+</body>
+</html>

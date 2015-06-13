@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<link href ="css/style.css" rel ="stylesheet"/>
+
+
+<h1>Copying</h1>
+
+<b>Hey</b><p>, you're the best!</p>
+<h2>DOM Insertion, Around</h2>
+
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+
+<script>
+    $( "b" ).clone().prependTo( "p" ); //.clone()
+    $( "p" ).wrap( "<div></div>" );
+
+
+</script>
+
+</body>
+</html>

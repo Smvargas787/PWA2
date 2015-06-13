@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Browser - .resize()</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: #006;
+	border: 1px solid #666;
+}
+</style>
+</head>
+
+<body>
+
+<p>
+Syntax<br>
+<br>
+$(selector).resize() <br>
+or<br>
+$(selector).resize(function)
+</p>
+
+<!----Instructions-->
+<!--Resize the window using the resize method.  Write a function that will send an alert when the window has been resized. -->
+
+<div class="thisBox"></div> <!--Closes thisBox-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--//When you hover over the li append a span that says Awesome Hover to it. Then find the last span that was applied and remove it.-->
+<script>
+	$(window).resize(function(){
+		//alert("The window has changed size.");
+		$("body").prepend("<div>" + $(window).width() + "</div>");
+	});
+
+</script>
+
+
+</body>
+</html>

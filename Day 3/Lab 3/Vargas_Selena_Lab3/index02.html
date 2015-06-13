@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<link href ="css/style.css" rel ="stylesheet"/>
+
+<h1>CSS</h1>
+
+<p>How</p>
+<p>You</p>
+<p>Doing?!</p>
+
+<p class="blue under">I'm</p>
+<p class="blue under highlight">Doing</p>
+<p class="blue under">Just</p>
+<p class="blue under">Fine</p>
+
+<h2>Dimensions</h2>
+
+<button id="getp">How tall is Mr. P?</button>
+<button id="getd">How tall is Mr. D?</button>
+<button id="getw">How tall is Mrs. W?</button>
+
+<div>&nbsp;</div>
+
+<button id="getparagraph">How Wide is Mr. P?</button>
+<button id="getdocument">How Wide is Mr. D?</button>
+<button id="getwindow">How Wide is Mrs. W?</button>
+
+<div>&nbsp;</div>
+
+<script>
+    $( "p" ).last().addClass( "selected" ); //.addClass()
+    $( "p:even" ).removeClass( "red" ); //.removeClass()
+
+    function showHeight( element, height ) {
+        $( "div" ).text( "My Height " + element  + height + "px." );
+    }
+    $( "#getp" ).click(function() {
+        showHeight( "is ", $( "p" ).height() );
+    });
+    $( "#getd" ).click(function() {
+        showHeight( "is ", $( document ).height() );
+    });
+    $( "#getw" ).click(function() {
+        showHeight( "is ", $( window ).height() ); //.height()
+    });
+
+</script>
+
+<script>
+
+    function showWidth( element, width ) {
+        $( "div" ).text( "My Width " + element  + width + "px." );
+    }
+    $( "#getparagraph" ).click(function() {
+        showWidth( "is ", $( "p" ).width() );
+    });
+    $( "#getdocument" ).click(function() {
+        showWidtht( "is ", $( document ).width() );
+    });
+    $( "#getwidth" ).click(function() {
+        showWidth( "is ", $( window ).width() ); //.width()
+
+    });
+</script>
+
+</body>
+</html>

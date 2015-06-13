@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href ="css/style.css" rel ="stylesheet"/>
+    <link href ="css/style2.css" rel ="stylesheet"/>
+
+</head>
+<body>
+
+<span>Hope you like shiny things...</span>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+
+
+<p><button>Give me 10 Jumping Jacks!</button></p>
+<div class="first"></div>
+<div class="second"></div>
+
+<button>Watch Me Fade!</button>
+<!--<button>fadeToggle p2</button>-->
+<p>Bye! Bye!</p>
+<div id="log"></div>
+
+Click me!
+<div></div>
+<div></div>
+<div></div>
+
+
+<script>
+
+    //Effects
+
+    //==============================Custom
+
+    //.delay()
+    $( "button" ).click(function() {
+        $( "div.first" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+        $( "div.second" ).slideUp( 300 ).fadeIn( 400 );
+    });
+
+    //==============================Fading
+    //.fadeIn()
+    $( document.body ).click(function() {
+        $( "div:hidden:first" ).fadeIn( "fast" );
+    });
+
+    //.fadeToggle()
+    $( "button:last" ).click(function() {
+        $( "p:last" ).fadeToggle( "fast", function() {
+            $( "#log" ).append( "<div>finished</div>" );
+        });
+    });
+
+    //==============================Sliding
+
+    //.slideDown()
+    $( document.body ).click(function () {
+        if ( $( "div:first" ).is( ":hidden" ) ) {
+            $( "div" ).slideDown( "slow" );
+        } else {
+            $( "div" ).hide();
+        }
+    });
+
+    //.slideUp()
+    $( document.body ).click(function() {
+        if ( $( "div:first" ).is( ":hidden" ) ) {
+            $( "div" ).show( "slow" );
+        } else {
+            $( "div" ).slideUp();
+        }
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>

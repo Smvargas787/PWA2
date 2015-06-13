@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<link href ="css/style.css" rel ="stylesheet"/>
+
+<h1>DOM Removal</h1>
+
+<button>wrap/unwrap</button>
+<p>Are we</p>
+<p>there</p>
+<p>yet?</p>
+
+<script>
+
+    var pTags = $( "p" );
+    $( "button" ).click(function() {
+        if ( pTags.parent().is( "div" ) ) {
+            pTags.unwrap();
+        } else {
+            pTags.wrap( "<div></div>" ); //.unwrap()
+
+        }
+    });
+
+</script>
+
+</body>
+</html>

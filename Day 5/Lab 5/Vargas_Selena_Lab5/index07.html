@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href ="css/main.css" rel ="stylesheet"/>
+</head>
+<body>
+
+<h1>Welcome To The Rest Of Your Life!</h1>
+
+<ul>
+    <li>Ramey</li>
+    <li>Selena</li>
+    <li class="fade">Airforce</li>
+    <li class="fade">Strong</li>
+</ul>
+
+
+<p id="AF">Integrity First</p>
+<p id="AF2">Service Before Self</p>
+<p id="AF3">Excellence In All We Do</p>
+
+<button> Group </button>
+<button> Vice </button>
+<button> Executive </button>
+<button> Communications </button>
+<button> Support </button>
+
+<div id="log"></div>
+
+
+<script>
+
+//Mouse Events
+
+    //.hover()
+
+    $( "li" ).hover(
+            function() {
+                $( this ).append( $( "<span> ***</span>" ) );
+            }, function() {
+                $( this ).find( "span:last" ).remove();
+            }
+    );
+
+    $( "li.fade" ).hover(function() {
+        $( this ).fadeOut( 100 );
+        $( this ).fadeIn( 500 );
+    });
+
+
+    //.click()
+    $( "p" ).click(function() {
+            $( this ).slideUp();
+        });
+
+//Event Object
+
+
+    //event.data
+    var logDiv = $( "#log" );
+
+        for ( var i = 0; i < 5; i++ ) {
+            $( "button" ).eq( i ).on( "click", { value: i }, function( event ) {
+                var msgs = [
+                    "button = " + $( this ).index(),
+                    "event.data.value = " + event.data.value,
+                    "i = " + i
+                ];
+                logDiv.append( msgs.join( ", " ) + "<br>" );
+            });
+        }
+
+    //event.currentTarget
+    $( "h1" ).click(function( event ) {
+            alert( event.currentTarget === this ); // true
+        });
+
+</script>
+
+</body>
+</html>

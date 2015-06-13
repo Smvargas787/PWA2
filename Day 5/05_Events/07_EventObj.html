@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title> Event Objects - event.which</title>
+<style>
+
+</style>
+</head>
+
+<body>
+<p>
+event.which<br>
+For key or mouse events, this property indicates the specific key or button that was pressed.<br><br>
+</p>
+
+<!----Instructions-->
+<!--Log which button was pressed.-->
+<div>
+Enter your name: 
+<input type="text">
+<p>When you type in the field above, the div element below will display the key number.</p>
+<div />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('input').keydown(function(event){
+            $('p').html('Key: ' + event.which);
+        });
+    });
+</script>
+</body>
+</html>

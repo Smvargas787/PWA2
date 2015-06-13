@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href ="css/main.css" rel ="stylesheet"/>
+</head>
+<body>
+
+
+<select name="sweets" multiple="multiple">
+    <option>JetBlue</option>
+    <option selected="selected">Southwest</option>
+    <option>Airtran</option>
+    <option selected="selected">Carribean</option>
+    <option>Kalea</option>
+    <option>Canadian</option>
+</select>
+<div></div>
+
+<script>
+
+//Form Events
+
+
+//.change()
+
+$( "select" )
+        .change(function () {
+            var str = "";
+            $( "select option:selected" ).each(function() {
+                str += $( this ).text() + " ";
+            });
+            $( "div" ).text( str );
+        })
+        .change();
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href ="css/main.css" rel ="stylesheet"/>
+
+    <button>Plane #1</button>
+    <button>Plane #2</button>
+    <div><span>0</span> Lost At Sea Planes....</div>
+    <div><span>0</span> Just Lost..</div>
+
+
+    <script>
+
+        //Event Handler Attachment
+
+        //.trigger()
+        $( "button:first" ).click(function() {
+            update( $( "span:first" ) );
+        });
+
+        $( "button:last" ).click(function() {
+            $( "button:first" ).trigger( "click" );
+            update( $( "span:last" ) );
+        });
+
+        function update( j ) {
+            var n = parseInt( j.text(), 10 );
+            j.text( n + 1 );
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

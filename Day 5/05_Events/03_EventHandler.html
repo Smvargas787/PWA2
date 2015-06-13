@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Event Handler - $(selector).one(event,data,function)</title>
+<style>
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: #00F;
+	}
+</style>
+</head>
+
+<body>
+<div class="larger">
+Syntax<br>
+$(selector).one(event,data,function)
+</div>
+<!----Instructions-->
+<!--Using the one method, click on the div with a class of larger to increase the size of the div by a width of 25px and a height of 50px. This action should only happen once.-->
+
+
+<button>Click Me</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $('button').one('click', function(){
+         $('div').width(125).height(150);
+    });
+</script>
+
+<script>
+$(".larger").one("click", function(){
+	$(this).animate({width: "+=25px", height: "+=50px"});
+});
+</script>
+
+
+</body>
+</html>

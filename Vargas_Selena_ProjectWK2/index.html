@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="CSS/Main.css" rel="stylesheet" type="text/css">
+
+
+<head>
+<style type="text/css">
+.tooltip {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px ;
+}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+    <nav>
+        <ul id="myNav">
+            <li><a href="#">Link 1</a> </li>
+            <li><a href="#" class="selected">Link 2</a> </li>
+            <ul>
+                <li><a href="#">Hi</a></li>
+                <li><a href="#">Selena</a></li>
+            </ul>
+
+            <!--<div class="clear"></div>-->
+            <!--</li>-->
+            <li><a href="#">Link 3</a> </li>
+            <li><a href="#">Link 4</a> </li>
+        </ul>
+    </nav>
+    <br><br>
+
+
+<h1> Welcome to Steward Management Productions</h1>
+         <div id="login">
+              <form id="loginForm">
+                <label>Username: </label>
+                  <input name="signinButton" type="text" id="user" class="masterTooltip" title="Enter your username" required /><br>
+                <label>Password: </label>
+                  <input name="signinButton" type="password" id="pass" class="masterTooltip" title="Enter your password"required /><br>
+                <button name="signinButton" id="signinButton">Sign In</button>
+              </form>
+            </div>
+
+        <section id="cta">
+        <h2>Join Now!</h2>
+        <p>
+        Steward Management Productions is in the works of finding talent and promoting them to society. Steward Management is open to all talent who want to showcase themselves. We are a professional and friendly owned business. If you have hold talent and want to showcase what you have or if you even want to just get your name out, join now! We will contact you with a list of upcoming shows and performances for you to test out your beautiful talents!
+        </p>
+        <input name="regbtn" type="button" value="Sign Up" class="masterTooltip" title="Join Today!"/>
+            </p>
+
+            <br>
+        <br>
+
+            <a href="#" class="modalClick" title="Join Today!">Sign Up!</a> <!--Use this link for the modal!-->
+</section>
+<!------------------------------Accordion------------------------------>
+ <section id="accordion">
+ <div></div>
+  <ul id="tabs-nav">
+    <li><a href="#dance"><img src="images/dance.jpeg" name="projects" width="65" height="64" id="projects"></a></li>
+    <li><a href="#mic"><img src="images/mic.png" width="65" height="64" id="tasks"></a></li>
+    <li><a href="#spokenword"><img src="images/spokenword.jpg" width="65" height="64" id="users"></a></li>
+  </ul>
+
+  <div id="tabs"></div>
+
+       <p id="dance">
+       This tab is for those who choose to choreograph a dance as their talent for showcases and performances.<br><br>
+       Auditions page... <button class="dancebtn">Audition for Dance!</button>
+       </p>
+
+       <p id="mic">
+         This tab is for those who choose to sing as their talent for showcases and performances.<br><br>
+         Open Mic Page... <button class="micbtn">Open Mic & Lyrics!</button>
+       </p>
+
+       <p id="spokenword">
+         This tab is for those who choose to cite poetry and duos as their talent for showcases and performances.<br><br>
+         Spoken Word Page... <button class="spokenwordbtn">Spoken Word!</button>
+       </p>
+
+     <div>
+       </div><!--Closes Tabs Content -->
+      </section> <!--Closes Accordion--->
+
+            <!-----------------------------------Modal---------------------------------------->
+<div id="overlay">
+    <div id="modal">
+        <span class="close">X</span>
+        <h3 class="header">Sign Up</h3>
+        <div>
+            <form>
+                <label>First Name:</label>
+                    <input type="text" id="fname"/><br>
+                <label>Last Name:</label>
+                    <input type="text" id="lname"/><br>
+                <label>Email:</label>
+                    <input type="email" id="email"/><br>
+                <label>Address:</label>
+                    <input type="text" id="address"/><br>
+                <button id="signUpBtn">Sign Up!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</div> <!--closes contaienr-->
+        <!--<div id="tooltipbox">student</div>-->
+            <!--<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>-->
+            <script type="text/javascript" src="JS/Main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+</div>
+
+</body>
+</html>

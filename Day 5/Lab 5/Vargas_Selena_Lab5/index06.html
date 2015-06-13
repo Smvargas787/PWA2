@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href ="css/main.css" rel ="stylesheet"/>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <label for="target">How are you feeling?</label>
+        <input id="target" type="text">
+    </fieldset>
+</form>
+<button id="other">
+    Click Me!
+</button>
+
+<script>
+
+
+
+    //Keyboard Events
+
+
+    //.keypress() & .keydown()
+
+    var xTriggered = 0;
+    $( "#target" ).keypress(function( event ) {
+        if ( event.which == 13 ) {
+            event.preventDefault();
+        }
+        xTriggered++;
+        var msg = "Handler for .keypress() called " + xTriggered + " time(s).";
+        $.print( msg, "html" );
+        $.print( event );
+    });
+
+    $( "#other" ).click(function() {
+        $( "#target" ).keypress();
+    });
+
+
+</script>
+
+</body>
+</html>
