@@ -1,9 +1,21 @@
 $(function(){
 
-        $( "#19" ).draggable();
+ //--------------------------19----------------------------------//
+        $(function() {
+                $( "#draggable" ).draggable();
+                $( "#droppable" ).droppable({
+                        drop: function( event, ui ) {
+                                $( this )
+                                    .addClass( "ui-state-highlight" )
+                                    .find( "p" )
+                                    .html( "Dropped!" );
+                        }
+                });
+        });
 
+        //$( "#19" ).draggable();
 
-
+//---------------------Color Animation-------------------------//
         var state = true;
         $( "#button" ).click(function() {
                 if ( state ) {
@@ -23,20 +35,25 @@ $(function(){
 
 });
 
-        //Midterm Plugin
+//-----------------Midterm Plugin-----------------//
         $.fn.color = function() {
                 this.css("color", "pink");
                 return this;
         };
 
-
+//--------------------Attr Method-----------------//
 
         $("p")
             .attr("src", "span");
 });
 
-$( ".colorSwap" ).click(function() {
-        
-}
+//----------------------8--------------------------//
+//        $('.colorSwap').on('click', function(e){
+//                e.preventDefault();
+//                    .Show();
+//
+//
+//});
 
-
+//---------------------10--------------------------//
+$('p').each(2);
