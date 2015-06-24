@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update your Account Information</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="container">
+  <nav>
+    <div class="userid">
+    </div>
+    
+    <div class="logoutbox">
+    <button class="dashboard">Dashboard</button>
+    <button name="logOut" id="logOut">Sign Out</button>
+    </div>
+  </nav><!--Closes Nav-->
+  
+  <br>
+  <br>
+  
+  
+  <div id="editAcct">
+    <h3>Your Account Information</h3>
+      <div id="avatar">
+      <div class="avatarPhoto"></div><br>
+        <input id="updateavatar" type="file"><br><br>
+      <!--<button name="avatar" class="updateAvatar">Update Avatar</button>-->
+      </div><!--Closes Avatar-->
+      
+      <div id="updateaccountinputs">
+        <label>First Name:</label>
+          <input type="text" class="masterTooltip" title="Add or change your first name" id="updatefirstname"><br>
+        <label>Last Name:</label>
+          <input type="text" class="masterTooltip" title="Add or change your last name" id="updatelastname"><br>
+        <label>E-mail:</label>
+          <input type="email" class="masterTooltip" title="Update your email" id="updateemail"><br><br>
+        <button id="updateAcctBtn">Save Changes</button>
+      </div>
+  </div><!--Closes editAcct-->
+									     
+</div><!--Closes Container -->
+    
+  <script type="text/javascript" src="js/plugins/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

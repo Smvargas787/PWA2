@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <title></title>
+
+
+</head>
+<body>
+
+<div id="container">
+        <script id="entry-template" type="text/x-handlebars-template">
+    template content
+
+
+    <div class="entry">!
+        <h1>{{title}}</h1>!
+        <div class="body">!
+            {{body}}!
+        </div>!
+    </div>
+
+    <ul>!
+            {{#people}}! <li>{{name}}</li>!
+            {{/people}}! </ul>
+
+        <ul>
+             {{#people}}
+                <li>{{name}} - {{../group}}</li>
+             {{/people}}
+         </ul>
+
+    {{#person}}!
+    <div>Name: {{firstName}} {{lastName}}</div>!
+    <div>Email: {{email}}</div>!
+    <div>Phone: {{phone}}</div>!
+    {{/person}
+
+    <script type=”text/tmpl” id=”thing-template”>
+        <div class=”thing”>!
+        ! ! <h3>{{=title}}</h3>!
+        ! ! <p>{{=content}}</p>!
+        ! </div>!
+    </script>
+
+        </script>
+</div><!--Closes Container-->
+
+<script>
+
+    //Code here
+    var source   = $("#my-template").html();
+    var template = Handlebars.compile(source);
+    var data = { people: [
+        {name: "Eli"},
+        {name: "Kareem"},
+         {name: "Danny"}
+        ], group: "PWA2" };
+    $("#container").html(template(data));
+
+    var person =
+    { person: {
+        firstName: "JD",
+        lastName: "Smith",
+        email: "jd@smith.com",
+        phone: "407-555-5555"
+    } };
+    //Code here
+
+</script>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/handlebars-v1.3.0.js"></script>
+<script type="text/javascript" src="js/08_04block1.js"></script>
+
+
+</body>
+</html> 

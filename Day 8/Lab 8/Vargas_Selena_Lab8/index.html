@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href ="css/main.css" rel ="stylesheet"/>
+</head>
+<body>
+
+<div class="trigger">Trigger</div>
+<div class="result"></div>
+<div class="log"></div>
+
+<p><b>Results:</b> <span id="results"></span></p>
+<form>
+    <select name="single">
+        <option>Choose Me</option>
+        <option>No Me !</option>
+    </select>
+    <select name="multiple" multiple="multiple">
+        <option selected="selected">Little Brother</option>
+        <option>Middle Brother</option>
+        <option selected="selected">Big Brother</option>
+    </select>
+    <br>
+    <input type="checkbox" name="check" value="check1" id="ch1">
+    <label for="ch1">Mic Check 1</label>
+    <input type="checkbox" name="check" value="check2" checked="checked" id="ch2">
+    <label for="ch2">Mic Check 2</label>
+    <input type="radio" name="radio" value="radio1" checked="checked" id="r1">
+    <label for="r1">Play 1</label>
+    <input type="radio" name="radio" value="radio2" id="r2">
+    <label for="r2">Play 2</label>
+</form>
+
+<div class="results"></div>
+
+<div id="images"></div>
+
+<b>Projects:</b>
+<ol id="new-projects"></ol>
+
+
+<script>
+
+
+//Global Ajax Event Handlers
+
+    //.ajaxSuccess()
+
+
+    $(document).ajaxSuccess(function() {
+        $( ".log" ).text( "Triggered ajaxSuccess handler." );
+    });
+
+    $( ".trigger" ).on( "click", function() {
+        $( ".result" ).load( "ajax/test.html" );
+    });
+
+    $( document ).ajaxSuccess(function( event, xhr, settings ) {
+        if ( settings.url == "ajax/test.html" ) {
+            $( ".log" ).text( "Triggered ajaxSuccess handler. The ajax response was: " +
+            xhr.responseText );
+        }
+    });
+
+    $( document ).ajaxSuccess(function( event, request, settings ) {
+        $( "#msg" ).append( "<li>Successful Request!</li>" );
+    });
+
+
+    //.ajaxError()
+
+    $( document ).ajaxError(function() {
+    $( ".log" ).text( "Triggered ajaxError handler." );
+    });
+
+    $( "button.trigger" ).on( "click", function() {
+        $( "div.result" ).load( "ajax/missing.html" );
+    });
+
+    $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
+        if ( settings.url == "ajax/missing.html" ) {
+            $( "div.log" ).text( "Triggered ajaxError handler." );
+        }
+    });
+
+    $( document ).ajaxError(function( event, request, settings ) {
+        $( "#msg" ).append( "<li>Error requesting page " + settings.url + "</li>" );
+    });
+
+//Helper Functions
+
+    //.serializeArray()
+
+    function showValues() {
+        var fields = $( ":input" ).serializeArray();
+        $( "#results" ).empty();
+        jQuery.each( fields, function( i, field ) {
+            $( "#results" ).append( field.value + " " );
+        });
+    }
+
+    $( ":checkbox, :radio" ).click( showValues );
+    $( "select" ).change( showValues );
+    showValues();
+
+    //jQuery.param()
+
+    var params = { width:1680, height:1050 };
+    var str = jQuery.param( params );
+    $( ".results" ).text( str );
+
+//Low-Level Interface
+
+    //jQuery.ajax()
+
+    $.ajax({
+        statusCode: {
+            404: function() {
+                alert( "page not found" );
+            }
+        }
+    });
+
+    $.ajax({
+        url: "test.html",
+        context: document.body
+    }).done(function() {
+        $( this ).addClass( "done" );
+    });
+
+    //jQuery.ajaxSetup()
+
+    $.ajaxSetup({
+        url: "/xmlhttp/",
+        global: false,
+        type: "POST"
+    });
+    $.ajax({ data: myData });
+
+//Shorthand Methods
+
+    //jQuery.getJSON()
+    (function() {
+        var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+        $.getJSON( flickerAPI, {
+            tags: "mount rainier",
+            tagmode: "any",
+            format: "json"
+        })
+                .done(function( data ) {
+                    $.each( data.items, function( i, item ) {
+                        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+                        if ( i === 3 ) {
+                            return false;
+                        }
+                    });
+                });
+        })();
+
+    //.load()
+    $( "#new-projects" ).load( "/resources/load.html #projects li" );
+
+</script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</body>
+</html>

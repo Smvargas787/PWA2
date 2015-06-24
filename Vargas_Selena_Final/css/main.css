@@ -1,0 +1,53 @@
+/*19*/
+#19
+{   width: 150px;
+    height: 150px;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+p{
+    color: #0000ff;
+
+}
+
+/*20*/
+.toggler {
+
+    width: 500px;
+    height: 200px;
+    position: relative;
+}
+#button {
+
+    padding: .5em 1em;
+    text-decoration: none;
+}
+#effect {
+    width: 240px;
+    height: 135px;
+    padding: 0.4em;
+    position: relative;
+    background: #fff;
+}
+#effect h3 {
+    margin: 0;
+    padding: 0.4em;
+    text-align: center;
+    color: #ff69bf;
+}
+
+/*12*/
+span {
+    color: #ff69bf;
+}
+
+/*8*/
+
+.colorChange{
+    color: #ff69bf;
+}
+
+.colorSwap{
+    color: #0000ff;
+}

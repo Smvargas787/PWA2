@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--Selena Vargas
+	6/20/15
+    June
+-->
+<html>
+<head>
+<title>Weather API App</title>
+  
+<link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body>
+
+<div id="container">
+  <header> 
+      <h1>Bronx, New York  Weather Forecast</h1>
+  </header>
+  
+  <div>
+  
+    <h2>Current Conditions</h2>
+      <p>
+                     <!--  1. Display the icon for the current conditions (observation)
+                    2. Display weather
+                     3. Display temperature in Ferinheiths
+                     4. Display feels like temperature
+                     5. Display relative humidity
+                     6. Display wind direction
+                     7. Display wind miles per hour
+               -->
+      </p>
+  
+  
+    <h2>Your Hourly 1-day forecast</h2>
+      <p>
+      <!--  1. Display the Hourly 1-day forecast 
+      		2. Display the condition for each hour
+            3. Display the temperature for each hour
+      -->
+      </p>
+  
+    <h2>Your 7-day forecast</h2>
+      <p>
+      <!--	1. Display the 7-day forecast 
+      		2. Display the icon
+      		3. Display weather
+            4. Display highs
+            5. Display lows
+            6. Display conditions
+      -->
+      </p>
+
+  
+</div><!--Closes Container-->
+
+
+
+  <script>
+
+
+
+    <!--This is an example. Use your own API key and city location.  Copy and paste the url in your browser. It will display the needed information in a JSON file.  Use the keys to display the information on your page-->	
+
+    jQuery(document).ready(function ($) {
+
+    	$.ajax({
+            url: "http://api.wunderground.com/api/b3f12c80ca59a478/forecast/geolookup/conditions/q/Ny/bronx.json",
+            "image": {
+                "url": "http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+                "title": "Weather Underground",
+                "link": "http://www.wunderground.com"
+            },
+
+            dataType: "json",
+            success: function (parsed_json) {
+                var location = parsed_json['location']['city'];
+                var temp_f = parsed_json['current_observation']['temp_f'];
+                var feels = parsed_json['current_observation']['feelslike_string'];
+                var humidity = parsed_json['current_observation']['relative_humidity'];
+                var direction = parsed_json['current_observation']['wind_dir'];
+                var wind = parsed_json['current_observation']['wind_mph'];
+                var img = parsed_json['current_observation']['icon'] ['iconu'];
+                var iconu = parsed_json["http://icons.wxug.com/i/c/a/ICON.gif"];
+
+                $("p:first").html(img +" Current temperature in " + location + " is: " + temp_f + "ºF" +" it feels like " + feels +" with "+ humidity +" in the " +direction +" of " + wind + "MPH" );
+            }
+        });
+    });
+
+      jQuery(document).ready(function($){
+          $.ajax({
+              url: "http://api.wunderground.com/api/b3f12c80ca59a478/forecast/geolookup/conditions/q/Ny/bronx.json",
+              dataType: "json",
+              success: function (parsed_json) {
+                  var hourly = parsed_json['']
+              }
+          })
+      });
+//
+    jQuery(document).ready(function($){
+        $.ajax({
+            url: "http://api.wunderground.com/api/b3f12c80ca59a478/forecast/geolookup/conditions/q/Ny/bronx.json",
+            dataType: "json",
+            success: function (parsed_json) {
+                var sevenDay = parsed_json['forecast']['txt.forecast']['forecastday'][7]['title'];
+                var sevenCast = parsed_json['forecast']['txt_forecast']['forecastday'][7]['fccttext'];
+                var sixDay = parsed_json['forecast']['txt.forecast']['forecastday'][6]['title'];
+                var sixCast = parsed_json['forecast']['txt_forecast']['forecastday'][6]['fccttext'];
+                var fiveDay = parsed_json['forecast']['txt.forecast']['forecastday'][5]['title'];
+                var fiveCast = parsed_json['forecast']['txt_forecast']['forecastday'][5]['fccttext'];
+                var fourDay = parsed_json['forecast']['txt.forecast']['forecastday'][4]['title'];
+                var fourCast = parsed_json['forecast']['txt_forecast']['forecastday'][4]['fccttext'];
+                var threeDay = parsed_json['forecast']['txt.forecast']['forecastday'][3]['title'];
+                var threeCast = parsed_json['forecast']['txt_forecast']['forecastday'][3]['fccttext'];
+                var twoDay = parsed_json['forecast']['txt.forecast']['forecastday'][2]['title'];
+                var twoCast = parsed_json['forecast']['txt_forecast']['forecastday'][2]['fccttext'];
+                var oneDay = parsed_json['forecast']['txt.forecast']['forecastday'][1]['title'];
+                var oneCast = parsed_json['forecast']['txt_forecast']['forecastday'][1]['fccttext'];
+
+                $("p:first").html(oneCast +" Day 1 " + oneDay + " is: " + twoCast + "ºF" +" it feels like " + twoDay +" with "+ threeCast +" in the " +threeDay +" of " + fourCast + "MPH" + fourDay + fiveCast + fiveDay + sixCast + sixDay + sevenCast + sevenDay);
+
+
+
+            }
+        })
+    });
+
+  </script>
+    </div>
+</body>
+</html>
+
+
+                                                <!--Teacher Notes-->
+<!--$(function() {-->
+
+<!--var currentConditionsAPI = "http://api.wunderground.com/api/6f114cb5d7dd1d33/conditions/q/CA/San_Francisco.json" ;-->
+<!--var hourlyAPI = "http://api.wunderground.com/api/6f114cb5d7dd1d33/hourly/q/CA/San_Francisco.json";-->
+<!--var sevenDayAPI = "http://api.wunderground.com/api/6f114cb5d7dd1d33/forecast10day/q/CA/San_Francisco.json";-->
+
+<!--$.getJSON(currentConditionsAPI, function(data) {-->
+
+<!--var icon = data.current_observation.icon_url,-->
+<!--weather = data.current_observation.weather,-->
+<!--temp_f = data.current_observation.temp_f,-->
+<!--feelsLike = data.current_observation.feelslike_string,-->
+<!--relHumidity = data.current_observation.relative_humidity,-->
+<!--windDir = data.current_observation.wind_dir,-->
+<!--windSpeed = data.current_observation.wind_mph;-->
+
+
+<!--$("#current").html(-->
+<!--"<img src='" + icon + "'>" +-->
+<!--"</br>" +-->
+<!--"Current weather is: " + weather +-->
+<!--"</br>" +-->
+<!--"Current temperature is: " + temp_f + " F" +-->
+<!--"</br>" +-->
+<!--"Current feels like temperature is: " + feelsLike +-->
+<!--"</br>" +-->
+<!--"Current relative humidity is: " + relHumidity +-->
+<!--"</br>" +-->
+<!--"Current wind direction is: " + windDir +-->
+<!--"</br>" +-->
+<!--"Current wind speed is: " + windSpeed + " MPH"-->
+<!--);-->
+<!--});-->
+
+
+
+<!--$.getJSON(hourlyAPI, function(data) {-->
+
+<!--var hours = 24,-->
+<!--count = 0;-->
+
+<!--$.each(data.hourly_forecast, function (key, value) {-->
+
+<!--var hTime = value.FCTTIME.pretty;-->
+<!--var hForecast = value.wx;-->
+<!--var hCondition = value.condition;-->
+<!--var hTemp = value.temp.metric;-->
+
+<!--$("#hourly").append(-->
+<!--'<div class="hour_forecast">' +-->
+    <!--'<p> The forecast for ' + hTime + ' is ' + hForecast + '.</p>' +-->
+    <!--'<p> The condition for this time is ' + hCondition + '.</p>' +-->
+    <!--'<p> The temperature for this time is ' + hTemp + ' F.</p> </br>' +-->
+    <!--'</div>'-->
+<!--);-->
+
+<!--count++;-->
+<!--if (count === hours) {-->
+<!--return false;-->
+<!--} else {-->
+<!--return true;-->
+<!--}-->
+<!--});-->
+<!--});-->
+
+
+<!--$.getJSON(sevenDayAPI, function(data) {-->
+
+<!--var days = 7,-->
+<!--count = 0,-->
+<!--simpleFc = data.forecast.simpleforecast.forecastday,-->
+<!--txtFc = data.forecast.txt_forecast.forecastday ;-->
+
+<!--for (i = 0; i < days; i++) {-->
+
+<!--var wForecast = txtFc[count].fcttext;-->
+<!--var wDate = txtFc[count].title;-->
+<!--var wIcon = txtFc[count].icon_url;-->
+<!--var wHighs = simpleFc[i].high.fahrenheit;-->
+<!--var wLows = simpleFc[i].low.fahrenheit;-->
+<!--var wConditions = simpleFc[i].conditions;-->
+
+<!--$("#weekly").append(-->
+<!--'<div class="weekly_forecast">' +-->
+    <!--'<div><img src="' + wIcon + '"></div>' +-->
+    <!--'<p> The forecast for ' + wDate + ' is ' + wForecast + '.</p>' +-->
+    <!--'<p> The conditions for this day is ' + wConditions + '.</p>' +-->
+    <!--'<p> The highs for this day is ' + wHighs + ' F.</p>' +-->
+    <!--'<p> The lows for this day is ' + wLows + ' F.</p> </br>' +-->
+    <!--'</div>'-->
+<!--);-->
+
+<!--count += 2;-->
+
+<!--}-->
+
+<!--});-->
+
+
+<!--});-->
+
+
+
+
+

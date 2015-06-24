@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>week2</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="container">
+  <nav>
+    <div class="userid">Welcome User:
+    </div>
+    
+    <div class="logoutbox">
+      <button class="dashboard">Dashboard</button>
+      <button name="profilebtn" id="profilebtn">Your Account</button>
+      <button name="logOut" id="logOut">Sign Out</button>
+    </div>
+  </nav>
+  
+  <br>
+  <br>
+  
+  <section> 
+      <p><a href="#" class="modalClick">Add +</a>
+      </p>
+    
+      <h1>Current Projects</h1>
+  
+      <div class="projects">
+      </div><!--Closes Projects-->
+  </section>
+     
+  <div id="overlay">
+      <div id="modal">
+          <span class="close">X</span>
+          <h3 class="header">Add Project</h3>
+              <div id="add">
+                <form id="addForm">
+                  <label>Project Name: </label>
+                      <input name="projectName" type="text" id="projectName"/><br>
+                  <label>Project Description: </label>
+                      <input name="projectDescription" type="text" id="projectDescription" /><br>
+                  <label>Project Due Date: </label>
+                      <input name="projectDueDate" type="text" id="projectDueDate" /><br>
+                  <label for="status">Select status:</label>
+                  <br>    
+                 <label class="mystatus">
+                   <input type="radio" name="status" id="urgent"> <img src="images/btn1.jpg" width="69" height="75">
+                 </label>
+                 <label class="mystatus">
+                  <input type="radio" name="status" id="normal"> <img src="images/btn2.jpg" width="69" height="75">
+                 </label>
+                 <label class="mystatus">
+                  <input type="radio" name="status" id="delayed"><img src="images/btn3.jpg" width="69" height="75">
+                 </label>
+                 <label class="mystatus">
+                  <input type="radio" name="status" id="complete"><img src="images/btn4.jpg" width="69" height="75"><br>
+                 </label>             
+                 <br>
+                 <button name="addButton" id="addButton">Add</button>
+              </form>
+            </div><!--Closes add div-->
+      </div><!--Closes modal-->
+  </div><!--Closes Overlay-->
+
+
+<!--Edit Modal-->
+
+ <div id="overlay2">
+      <div id="modal2">
+          <span class="close">X</span>
+          <h3 class="header">Update Project</h3>
+              <div>
+                <form>
+                  <label>Project Name: </label>
+                      <input name="projectName" type="text" id="updateName"/><br>
+                  <label>Project Description: </label>
+                      <input name="projectDescription" type="text" id="updateDescription" /><br>
+                  <label>Project Due Date: </label>
+                      <input name="projectDueDate" type="text" id="updateDate" /><br>
+                  <label for="updatestatus">Select status:</label>
+                  <br>    
+                 <label class="mystatus">
+                   <input type="radio" name="updatestatus" id="urgent"> <img src="images/btn1.jpg" width="69" height="75">
+                 </label>
+                 <label class="mystatus">
+                  <input type="radio" name="updatestatus" id="normal"> <img src="images/btn2.jpg" width="69" height="75">
+                 </label>
+                 <label class="mystatus">
+                  <input type="radio" name="updatestatus" id="delayed"><img src="images/btn3.jpg" width="69" height="75">
+                 </label>
+                 <label class="mystatus">
+                  <input type="radio" name="updatestatus" id="complete"><img src="images/btn4.jpg" width="69" height="75"><br>
+                 </label>             
+                 <br>
+                 <button name="updateButton" id="updateButton">Update</button>
+              </form>
+            </div><!--Closes add div-->
+      </div><!--Closes modal-->
+  </div><!--Closes Overlay-->
+
+
+
+
+
+</div><!--Closes Container -->
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+</html> 

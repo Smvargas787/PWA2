@@ -1,0 +1,87 @@
+h1{
+    text-align: center;
+}
+
+/*Navigation*/
+ul.navigation li {
+    display: inline-block;
+    letter-spacing: 2px;
+    padding: 1%;
+    margin-right: 1%;
+    text-align: right;
+    position: relative;
+    z-index: inherit;
+    font-size: 0.813em; /*13px*/
+    list-style: none;
+    line-height: 1em;
+    float: right;
+}
+
+/*Show*/
+div {
+    width: 80px;
+    height: 80px;
+    background: #ffd700;
+    margin: 5px;
+    float: left;
+}
+span {
+    display: block;
+    clear: left;
+    color: red;
+}
+.starthidden {
+    display: none;
+}
+
+/*All paragraphs*/
+.p1{
+    color: #d3d3d3;
+}
+
+/*Name Value*/
+a {
+    display: inline-block;
+    width: 200px;
+}
+
+/*First of Type*/
+span.fot {
+    color: red;
+    font-size: 120%;
+    font-style: italic;
+}
+
+/*.add()*/
+.div1 {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+}
+.p6 {
+    clear: left;
+    font-weight: bold;
+    font-size: 16px;
+    color: blue;
+    margin: 0 10px;
+    padding: 2px;
+}
+
+/*.Click()*/
+
+p {
+    color: red;
+    margin: 5px;
+    cursor: pointer;
+}
+p:hover {
+    background: yellow;
+}
+
+/*.animate()*/
+div {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+}
