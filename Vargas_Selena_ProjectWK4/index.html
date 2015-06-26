@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="container">
+
+    <button id="add-todo">Add a to-do item</button>
+
+        <!--To Do List-->
+        <div id="to-do">
+            <h1>My To-do List</h1>
+            <ul id="todo-list" class="sortlist">
+            </ul>
+        </div>
+
+        <!--Completed List-->
+        <div id="completed">
+            <h2>Completed Tasks</h2>
+            <ul id="completed-list" class="sortlist">
+            </ul>
+        </div>
+
+        <!--Modal-->
+        <div id="new-todo" title="Add to-do item">
+            <form>
+                <p>
+                    <label for="task">Task Name:</label>
+                    <input type="text" name="task" id="task">
+                </p>
+                <p>
+                   <label for="due-date">Due Date:</label>
+                    <input type="text" name="due-date" id="due-date">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!--<script>-->
+        <!---->
+        <!---->
+    <!--</script>-->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

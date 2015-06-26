@@ -1,0 +1,30 @@
+/*Body*/
+
+Body{
+    background-color: grey;
+    background-image: url("../images/selena.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    cursor: pointer;
+}
+
+/*Headings*/
+
+h1{
+    border: solid 4px #ff0000;
+    padding: 3px;
+    width: 200px;
+}
+
+
+/*Buttons/ List*/
+button, ul{
+    color: #0000ff;
+}
+
+/*Form*/
+form{
+    color: #ff0000;
+}
+
+
